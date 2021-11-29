@@ -1,0 +1,27 @@
+<%= render partial: "shared/top_menu"%>
+
+<div class="section-home-page">
+    <h1>Home Page</h1>
+
+    <div class="section-all-posts">
+        <% @posts.each do |post| %>
+            <div class="card-post">
+                <div class="card-details">
+                <span class="post-created-at"><%= post.user.username + " - " + post.created_at.strftime("%d/%m/%Y") %></span>
+                    <h3 class="post-title"><%= (post.title.html_safe).truncate_words(20) %></h3>
+                    <span class="post-description"><%= truncate(post.body.html_safe, length: 150)  %></span>
+                </div>
+                <div class="card-footer">
+                    <a href=<%= "/users/posts/#{post.id}" %> >
+                        <span class="read-more">Read More</span>
+                        <%= fa_icon "arrow-right", title: "Show this post"%>
+                    </a>
+                </div>
+            </div>
+        <% end %>
+
+        <%= will_paginate @posts%>
+    </div>
+    
+</div>
+

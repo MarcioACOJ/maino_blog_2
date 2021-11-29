@@ -1,0 +1,22 @@
+<%= render partial: "shared/top_menu"%>
+
+<div class="section-profile-body">
+    <h1>Profile</h1>
+
+    <div class="inputs-content">
+        <%= form_with url: "/users/profile/#{@user.id}", method: :patch do |form| %>
+            <div class="inputs">
+                <%= form.label :query, "username", class: "label-input"%>
+                <%= form.text_field :query, id: "input-username", name: "username", value: @user.username %>
+            </div>
+            <div class="inputs">
+                <%= form.label :query, "email", class: "label-input"%>
+                <%= form.text_field :query, id: "input-email", name: "email", value: @user.email %>
+            </div>
+
+            <%= form.submit "Confirm", id: "submit-button"%>
+        <%end%>
+        
+        
+    </div>
+</div>

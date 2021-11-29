@@ -1,0 +1,30 @@
+<div class="section-inputs">
+    <% if type == :new %>
+        <%= form_with url: "/users/posts", method: :post do |form| %>
+            <div class="inputs">
+                <%= form.label :query, "title", class: "label-input"%>
+                <%= form.text_field :query, id: "input-title", name: "title" %>
+            </div>
+            <div class="inputs">
+                <%= form.label :query, "body", class: "label-input"%>
+                <%= form.text_area :query, id: "input-body", name: "body" %>
+            </div>
+
+            <%= form.submit "Create", id: "submit-button"%>
+        <% end %>
+    <%else%>
+        <%= form_with url: "/users/posts/#{@post.id}", method: :put do |form| %>
+            <div class="inputs">
+                <%= form.label :query, "title", class: "label-input"%>
+                <%= form.text_field :query, id: "input-title", name: "title", value: @post.title %>
+            </div>
+            <div class="inputs">
+                <%= form.label :query, "body", class: "label-input"%>
+                <%= form.text_area :query, id: "input-body", name: "body", value: @post.body%>
+            </div>
+
+            <%= form.submit "Update", id: "submit-button"%>
+        <% end %>
+    <% end %>
+    
+</div>

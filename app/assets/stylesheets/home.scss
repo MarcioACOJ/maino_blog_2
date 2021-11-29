@@ -1,0 +1,84 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.section-home-page {
+    background-color: var(--primary-darker);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+    height: 100vh;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    & > h1 {
+        color: var(--white);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    & > .section-all-posts {
+        justify-self: center;
+        align-self: center;
+        gap: 5px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 600px;
+
+        & > .card-post {
+            width: 100%;
+            background-color: var(--white);
+
+            padding: 5px;
+            border-radius: 5px;
+
+            & > .card-details {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                gap: 5px;
+
+                & > .post-created-at {
+                    font-size: 12px;
+                    color: var(--primary);
+                    opacity: 0.6;
+                    font-weight: bold;
+                }
+
+                & > .post-title {
+                    font-size: 18px;
+                    color: var(--primary);
+                    font-weight: bold;
+                }
+
+                & > .post-description {
+                    font-size: 12px;
+                    color: rgb(25, 34, 48);
+                }
+            }
+
+            & > .card-footer {
+                display: flex;
+                flex-direction: row;
+                justify-content: end;
+                gap: 5px;
+
+                & > a {
+                    text-decoration: none;
+                    background-color: var(--primary);
+                    padding: 3px 6px 3px 6px;
+                    color: white;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+    
+}

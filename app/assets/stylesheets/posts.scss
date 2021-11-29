@@ -1,0 +1,336 @@
+.section-posts {
+    background-color: var(--primary-darker);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+    height: 100vh;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    & > h1 {
+        color: var(--white);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+
+    & > .section-posts-list {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        align-self: center;
+        gap: 0.5px;
+
+        margin-top: 20px;
+
+        border: solid 1px var(--primary-border);
+        border-radius: 5px;
+        background-color: #221a37;
+
+        width: 600px;
+
+        padding: 0px 7px 0px 7px;
+
+        & > .section-top-input {
+            width: 600px;
+            position: absolute;
+            top: -35px;
+            right: 15px;
+
+            & > a {
+                text-decoration: none;
+                font-size: 12px;
+                background-color: var(--primary);
+                padding: 7px 10px 7px 10px;
+                color: var(--white);
+
+                border-radius: 5px;
+            }
+        }
+
+        & > .post-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0px 5px 0px 5px;
+            border: 1px solid #134a1c;
+
+            background-color: #0d0d25;
+            border-radius: 5px;
+
+            & > .post-title {
+                color: var(--white);
+                text-transform: uppercase;
+                font-size: 12px;
+            }
+
+
+            & > .post-input-actions {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                gap: 10px;
+
+
+                & > .action > a{
+                    color: var(--primary)
+                }
+
+                & > .action > a:hover{
+                    color: var(--green)
+                }
+            }
+        }
+    }
+    
+}
+
+/***************************************************/
+
+
+.section-new-posts {
+    background-color: var(--primary-darker);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+    height: 100vh;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+     & > h1 {
+        color: var(--white);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    & > .section-inputs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & > form {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 5px;
+            width: 600px;
+
+            & > .inputs {
+                display: flex;
+                flex-direction: row;
+                justify-content: start;
+                align-items: start;
+
+                gap: 10px;
+
+                width: 100%;
+    
+                & > .label-input {
+                    color: var(--white);
+                    text-transform: uppercase;
+                    font-size: 12px;
+                }
+    
+                & > input {
+                    width: 100%;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    border: solid 1px var(--primary-border);
+                    border-radius: 5px;
+                    background-color: #221a37;
+                    color: var(--white);
+                }
+
+                & > textarea {
+                    width: 600px;
+                    height: 225px;
+
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    border: solid 1px var(--primary-border);
+                    border-radius: 5px;
+                    background-color: #221a37;
+                    color: var(--white);
+                }
+            }
+        }
+
+        & > form > #submit-button {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 200px;
+            align-self: flex-end;
+            padding: 8px 12px 8px 12px;
+
+            cursor: pointer;
+        }
+    }
+}
+
+/*******************************************/
+
+.section-show-posts {
+    background-color: var(--primary-darker);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    height: 100vh;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+     & > h1 {
+        color: var(--white);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        align-self: flex-start;
+    }
+
+    & > .post-content {
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: 600px;
+
+        & > .post-title {
+            text-transform: uppercase;
+            font-size: 20px;
+            color: var(--white);
+        }
+
+        & > .post-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+
+            padding: 0px 5px 0px 5px;
+            width: 100%;
+
+            font-size: 12px;
+            color: var(--white);
+
+            border: solid 1px var(--primary-border);
+            border-radius: 5px;
+            background-color: #221a37;
+
+            & > .info-section {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                padding-top: 5px;
+                padding-bottom: 10px;
+                font-size: 10px;
+                opacity: 0.5;
+            }
+
+            & > .post-body {
+                padding-bottom: 5px;
+                font-size: 12px;
+            }
+        }
+    }
+
+    & > .post-comments {
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: 600px;
+
+        & > .comments-list {
+            list-style-type: none;
+            width: 100%;
+
+            & > li:not(:last-child) {
+                margin-bottom: 3px;
+            }
+            
+            & > li > .comment-data {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                background-color: #342b4e;
+                border-radius: 3px;
+                padding-left: 5px;
+                padding-right: 5px;
+                width: 100%;
+
+                & > .comment-details {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 5px;
+
+                    & > h3 {
+                        color: var(--white);
+                    }
+
+                    & > span {
+                        color: var(--white);
+                        font-size: 11px;
+                    }
+                }
+
+                & > .comment-body {
+                    color: #898ea7;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+
+    & > .comment-input-area {
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: 600px;
+
+        & > form {
+            width: 101%;
+            & > .inputs {
+                & > textarea {
+                    width: 99%;
+                    height: 70px;
+
+                    font-size: 11px;
+
+                    border: solid 1px var(--primary-border);
+                    border-radius: 5px;
+                    background-color: #1f1f1f;
+
+                    color: var(--white);
+
+                    padding: 5px;
+                }
+            }
+
+            & > #submit-button {
+                background-color: var(--primary);
+                padding: 7px 11px 7px 11px;
+                color: var(--white);
+            }
+        }
+    }
+}

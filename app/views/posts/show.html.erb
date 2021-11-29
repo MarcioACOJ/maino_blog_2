@@ -1,0 +1,48 @@
+<%= render partial: "shared/top_menu"%>
+
+<div class="section-show-posts">
+    <h1> Show Post </h1>
+
+    <div class="post-content">
+        <div class="post-title">
+            <span><%= @post.title %></span>
+        </div>
+
+        <div class="post-details">
+            <div class="info-section">
+                <span class="user-info"><%= @post.user.email %></span>
+                <span class="post-created-at"><%= @post.created_at.strftime("%d/%m/%Y") %></span>
+            </div>
+
+            <div class="post-body">
+                <span><%= @post.body %></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-comments">
+        <ul class="comments-list">
+            <% @post.comment.each do |cmd| %>
+                <li>
+                    <div class="comment-data">
+                        <div class="comment-details">
+                            <h3> <%= cmd.user.username %> </h3>
+                            <span> - <%= cmd.created_at.strftime("%d/%m/%Y") %> </span>
+                        </div>
+                        <span class="comment-body"><%= cmd.body %></span>                    
+                    </div>
+                </li>
+            <% end %>
+        </ul>                    
+    </div>
+
+    <div class="comment-input-area">
+         <%= form_with url: "/users/posts/#{@post.id}/comment/new", method: :patch do |form| %>
+            <div class="inputs">
+                <%= form.text_area :query, id: "input-body", name: "body"%>
+            </div>
+
+            <%= form.submit "Create new Comment", id: "submit-button"%>
+        <% end %>
+    </div>
+</div>

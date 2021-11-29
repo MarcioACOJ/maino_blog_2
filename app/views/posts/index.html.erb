@@ -1,0 +1,45 @@
+<%= render partial: "shared/top_menu"%>
+
+<div class="section-posts">
+    <h1> Posts </h1>
+
+   
+
+    <div class="section-posts-list">
+        <div class="section-top-input">
+            <a href=<%= new_post_path %> title="Create a new post">New Post</a>
+        </div>
+
+        <% @posts.each do |post| %>
+            <div class="post-row">
+                <div class="post-title"><%= post.title %></div>
+
+                <div class="post-input-actions">
+                    <div class="action">
+                        <a data-method="get" href=<%= "/users/posts/#{post.id}" %>>
+                            <%= fa_icon "info", title: "Show post" %>
+                        </a>
+                    </div>
+
+                    <div class="action">
+                        <a href=<%= "/users/posts/#{post.id}/edit" %>>
+                            <%= fa_icon "edit",title: "Edit post" %>
+                        </a>
+                    </div>
+
+                    <div class="action">
+                        <a data-confirm="Are you sure?" data-method="delete" href=<%= "/users/posts/#{post.id}" %> >
+                            <%= fa_icon "trash", title: "Delete post" %>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        <%end %>
+
+        
+    </div>
+
+    <%= will_paginate @posts%>
+</div>
+
