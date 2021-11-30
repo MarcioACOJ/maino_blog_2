@@ -24,6 +24,19 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
+
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :from => 'mainoblogemail@mainoblog.com',
+    :user_name => '96ee9ef73782b1',
+    :password => '2a45298cfe8257',
+    :address => 'smtp.mailtrap.io',
+    :domain => 'smtp.mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5
+  }
+
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
 
